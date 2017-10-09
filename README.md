@@ -1,2 +1,2 @@
 # manga-com-leite-v2
-Projeto criado na Hackaton do Instituto Federal Sul-rio-grandense - Campus Charqueadas.
+Projeto criado na modalidade Hackathon do evento <CHAR CODE/> do Instituto Federal Sul-rio-grandense - Campus Charqueadas.
