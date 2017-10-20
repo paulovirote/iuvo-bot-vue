@@ -32,6 +32,9 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="stylus" scoped>
+.tabs
+  margin-top: 70px
+
 </style>
 

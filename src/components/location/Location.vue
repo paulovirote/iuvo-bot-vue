@@ -1,10 +1,10 @@
 <template>
-  
+
 </template>
 <script>
   
 </script>
-<style>
+<style lang="stylus" scoped>
 
 </style>
 
