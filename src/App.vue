@@ -3,7 +3,6 @@
     <main>
       <menu-component></menu-component>
       <div class="wrapper">
-        <tabs></tabs>
         <router-view></router-view>   
       </div>
       
@@ -11,30 +10,37 @@
   </div>
 </template>
 <script>
-  import tabsComponent from './components/tabs/Tabs'
   import menuComponent from './components/menu/Menu'
   export default {
     name: 'app',
     components: {
-      'tabs': tabsComponent,
       'menu-component': menuComponent
     }
   }
 </script>
+
 <style lang="stylus">
 iuvo-main-blue = #2c3e50
 iuvo-dark-blue = #1c2d3e
+
 body
   margin: 0;
   background-color: iuvo-main-blue;
   height: 100vh;
+
+.wrapper{
+  padding-top 68px
+}
+
 #app
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+
 main
   text-align: center;
+
 header
   margin: 0;
   height: 56px;
