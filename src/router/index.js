@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import SignUp from '@/components/signUp/SignUp'
-import SignIn from '@/components/signIn/SignIn'
 import Timeline from '@/components/timeline/Timeline'
 import Home from '@/components/home/Home'
 import Location from '@/components/location/Location'
+import Situation from '@/components/situation/Situation'
+import Moment from '@/components/moment/Moment'
 
 Vue.use(Router)
 
@@ -22,16 +22,6 @@ export default new Router({
       component: Hello
     },
     {
-      path: '/signUp',
-      name: 'SignUp',
-      component: SignUp
-    },
-    {
-      path: '/signIn',
-      name: 'SignIn',
-      component: SignIn
-    },
-    {
       path: '/timeline',
       name: 'Timeline',
       component: Timeline
@@ -40,6 +30,16 @@ export default new Router({
       path: '/location',
       name: 'Location',
       component: Location
+    },
+    {
+      path: '/situation',
+      name: 'Situation',
+      component: Situation
+    },
+    {
+      path: '/moment',
+      name: 'Moment',
+      component: Moment
     }
   ]
 })
