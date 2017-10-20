@@ -6,6 +6,7 @@ import Home from '@/components/home/Home'
 import Location from '@/components/location/Location'
 import Situation from '@/components/situation/Situation'
 import Moment from '@/components/moment/Moment'
+import Done from '@/components/done/Done'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/moment',
       name: 'Moment',
       component: Moment
+    },
+    {
+      path: '/done',
+      name: 'Done',
+      component: Done
     }
   ]
 })
