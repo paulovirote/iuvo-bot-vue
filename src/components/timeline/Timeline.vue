@@ -1,15 +1,5 @@
 <template>
-  <div>
-    <menu-component></menu-component>
-
-    <div class="wrapper">
-      <tabs></tabs>
-    
-      <div class="wrapper-card">
-        
-      </div>
-    </div>
-  </div>
+  <div class="wrapper-card"></div>
 </template>
 <script>
 import tabsComponent from '../tabs/Tabs'
@@ -26,7 +16,7 @@ export default {
   //   return {
   //     projects: []
   //   }
-  // },
+  // }
 }
 </script>
 

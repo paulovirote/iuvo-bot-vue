@@ -1,12 +1,5 @@
 <template>
-  <div>
-    <menu-component></menu-component>
-
-    <div class="wrapper">
-      <tabs></tabs>
-      <forecast></forecast>
-    </div>
-  </div>
+    <forecast></forecast>
 </template>
 <script>
 import tabsComponent from '../tabs/Tabs'
