@@ -1,0 +1,15 @@
+{
+  "name": "How Can I Help?",
+  "short_name": "HCIHelp",
+  "icons": [
+    {
+      "src": "/static/img/icons/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#4DBA87"
+}
