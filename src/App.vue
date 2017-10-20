@@ -2,9 +2,7 @@
   <div id="app">
     <main>
       <menu-component></menu-component>
-
       <div class="wrapper">
-        <tabs></tabs>
         <router-view></router-view>   
       </div>
       
@@ -49,7 +47,6 @@ header
   padding: 0 16px 0 24px;
   background-color: #00d1b2;
   color: #fff;
-
 header span
   display: block;
   position: relative;
@@ -59,5 +56,4 @@ header span
   font-weight: 400;
   box-sizing: border-box;
   padding-top: 16px;
-
 </style>

@@ -25,7 +25,7 @@
 </template>
 <script>
 export default {
-  name: 'weatherForecastComponent'
+  name: 'location'
 }
 </script>
 <style lang="stylus" scoped>
@@ -35,7 +35,7 @@ export default {
 .location-title
   font-size 28px
   color #fff
-  margin: 50px 0 50px;
+  margin: 20px 0;
 
 .wrapper 
   background-color: #1c2d3e;
@@ -56,7 +56,7 @@ export default {
 
 .confirm 
   font-size: 20px;
-  padding: 10px 150px;
+  width 100%
   height: 66px;
   position: absolute;
   bottom: 0;
