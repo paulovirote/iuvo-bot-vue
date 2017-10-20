@@ -5,6 +5,7 @@ import SignUp from '@/components/signUp/SignUp'
 import SignIn from '@/components/signIn/SignIn'
 import Timeline from '@/components/timeline/Timeline'
 import Home from '@/components/home/Home'
+import Location from '@/components/location/Location'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/timeline',
       name: 'Timeline',
       component: Timeline
+    },
+    {
+      path: '/location',
+      name: 'Location',
+      component: Location
     }
   ]
 })
