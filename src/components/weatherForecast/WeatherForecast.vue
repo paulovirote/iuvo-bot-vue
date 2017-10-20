@@ -21,38 +21,25 @@
     }
 </script>
 
-<style>
-    .weather-info-wrapper {
+<style lang="stylus" scoped>
+    .weather-info-wrapper
         text-align: center;
         height: 100%;
         position: relative;
-    }
 
-    .weather-centered {
-        /* position: relative;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%); */
-    }
-
-    .weather-image-wrapper{
+    .weather-image-wrapper
         background-color: #1c2d3e;
-    }
     
-    .weather-image {
+    .weather-image
         width: 70%;
         max-width: 200px;
-    }
 
-    .city-information{
+    .city-information
         color: #fff;
-    }
 
-    .city-name{
-        margin: 20px 0px;
+    .city-name
+        margin: 20px 0px 10px;
         font-size: 28px;
         font-weight: inherit;
         font-style: normal;
-    }
 </style>

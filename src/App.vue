@@ -1,43 +1,54 @@
 <template>
   <div id="app">
     <main>
-      <router-view></router-view>
+      <menu-component></menu-component>
+
+      <div class="wrapper">
+        <tabs></tabs>
+        <router-view></router-view>   
+      </div>
+      
     </main>
   </div>
 </template>
 <script>
-export default {
-  name: 'app'
-}
+  import tabsComponent from './components/tabs/Tabs'
+  import menuComponent from './components/menu/Menu'
+  export default {
+    name: 'app',
+    components: {
+      'tabs': tabsComponent,
+      'menu-component': menuComponent
+    }
+  }
 </script>
 
-<style>
-body {
-  margin: 0;
-  background-color: #2c3e50;
-  height: 100vh;
-}
+<style lang="stylus">
+iuvo-main-blue = #2c3e50
+iuvo-dark-blue = #1c2d3e
 
-#app {
+body
+  margin: 0;
+  background-color: iuvo-main-blue;
+  height: 100vh;
+
+#app
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-}
 
-main {
+main
   text-align: center;
-}
 
-header {
+header
   margin: 0;
   height: 56px;
   padding: 0 16px 0 24px;
   background-color: #00d1b2;
   color: #fff;
-}
 
-header span {
+header span
   display: block;
   position: relative;
   font-size: 20px;
@@ -46,5 +57,5 @@ header span {
   font-weight: 400;
   box-sizing: border-box;
   padding-top: 16px;
-}
+
 </style>
