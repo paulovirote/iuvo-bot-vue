@@ -2,14 +2,12 @@
   <div class="wrapper-card"></div>
 </template>
 <script>
-import tabsComponent from '../tabs/Tabs'
 import menuComponent from '../menu/Menu'
 
 export default {
   name: 'timeline',
 
   components: {
-    'tabs': tabsComponent,
     'menu-component': menuComponent
   }
   // data () {

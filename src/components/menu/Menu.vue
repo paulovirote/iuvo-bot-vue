@@ -43,7 +43,7 @@ export default {
       accountTitle: 'Conta',
       paymentTitle: 'Pagamento',
       projectsTitle: 'Projetos',
-      title: 'Timeline'
+      title: 'Iuvo'
     }
   }
 
