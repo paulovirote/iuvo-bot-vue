@@ -2,7 +2,7 @@
   <div class="hello">
     <div class="wrapper">
       <img src="../../static/img/care.png" alt="How Can I Help? Logo" class="logo">
-      <h1>{{ msg }}</h1>
+      <h1 class="title">{{ msg }}</h1>
 
       <p class="about"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, molestiae rerum facilis amet ut reprehenderit minus? Cupiditate minima sint quia voluptas iste maxime eos dolorum quos nostrum eaque accusamus omnis, ab doloribus illum quidem reprehenderit facilis quis. Quia ab praesentium blanditiis dolor similique architecto, deleniti illum vitae pariatur excepturi odio?</p>
 
@@ -23,7 +23,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'How can I help?'
+      msg: 'IUVVO'
     }
   }
 }
@@ -39,6 +39,9 @@ h1, h2
   font-size: 50px
   color: #fff
   font-weight: normal
+
+.title 
+  letter-spacing: 8px
 
 ul
   list-style-type: none
@@ -68,7 +71,7 @@ a
 
 .hello
   position: relative
-  min-height: 650px
+  min-height: 100vh
   background: url('../../static/img/bg-hello-page.jpg')
   background-position: center;
   background-size: cover
