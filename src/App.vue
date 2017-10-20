@@ -12,12 +12,10 @@
   </div>
 </template>
 <script>
-  import tabsComponent from './components/tabs/Tabs'
   import menuComponent from './components/menu/Menu'
   export default {
     name: 'app',
     components: {
-      'tabs': tabsComponent,
       'menu-component': menuComponent
     }
   }
@@ -31,6 +29,10 @@ body
   margin: 0;
   background-color: iuvo-main-blue;
   height: 100vh;
+
+.wrapper{
+  padding-top 68px
+}
 
 #app
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
