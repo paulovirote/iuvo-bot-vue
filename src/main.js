@@ -6,14 +6,12 @@ import router from './router'
 import Notifications from 'vue-notification'
 import Vulma from 'vulma'
 import Bulma from 'Bulma'
-import tabsComponent from './components/tabs/Tabs'
 import vueBulmaComponents from 'vue-bulma-components'
 
 Vue.config.productionTip = false
 
 Vue.use(Vulma)
 Vue.use(Bulma)
-Vue.use(tabsComponent)
 Vue.use(Notifications)
 Vue.use(vueBulmaComponents)
 

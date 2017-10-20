@@ -4,13 +4,19 @@ import Hello from '@/components/Hello'
 import SignUp from '@/components/signUp/SignUp'
 import SignIn from '@/components/signIn/SignIn'
 import Timeline from '@/components/timeline/Timeline'
+import Home from '@/components/home/Home'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '',
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/hello',
       name: 'Hello',
       component: Hello
     },
