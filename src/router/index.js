@@ -7,6 +7,7 @@ import Location from '@/components/location/Location'
 import Situation from '@/components/situation/Situation'
 import Moment from '@/components/moment/Moment'
 import Map from '@/components/map/Map'
+import Done from '@/components/done/Done'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
 Vue.use(VueGoogleMaps, {
@@ -54,6 +55,11 @@ export default new Router({
       path: '/mapa',
       name: 'map',
       component: Map
+    },
+    {
+      path: '/done',
+      name: 'Done',
+      component: Done
     }
   ]
 })

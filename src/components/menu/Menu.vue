@@ -2,10 +2,7 @@
   <div>    
     
     <vulma-navbar class="navbar" show-menu-button='true' @menu-clicked='$refs.drawer.open()'>
-      <vulma-navitem slot='left' :is-tab='false'>
-        <img class="logo" src="../../../static/img/care.png">
-      </vulma-navitem>
-      <vulma-navitem class="title" slot='center'>
+      <vulma-navitem class="title" slot='right'>
         <h3 class="page-title">{{ title }}</h3>
       </vulma-navitem>
     </vulma-navbar>
@@ -14,13 +11,10 @@
       <vulma-drawerheader name='Milene ' email='milenelacerda@icloud.com ' avatar='' color='custom-hulk '></vulma-drawerheader>
       <vulma-menu>
 
-        <vulma-menuitem icon='fa-user'>{{ profileTile }}</vulma-menuitem>
-        <vulma-menugroup :title="configTitle">
-          <vulma-menuitem>{{ accountTitle }}</vulma-menuitem>
-          <vulma-menuitem>{{ paymentTitle }}</vulma-menuitem>
-          <vulma-menuitem>{{ projectsTitle }}</vulma-menuitem>
-        </vulma-menugroup>
-
+        <vulma-menuitem route='/location' icon='fa-handshake-o'>{{ askHelp }}</vulma-menuitem>
+        <vulma-menuitem route='/' icon='fa-map-marker'>{{ map }}</vulma-menuitem>
+        <vulma-menuitem route='/timeline' icon='fa-rss'>{{ feed }}</vulma-menuitem>
+  
       </vulma-menu>
     </vulma-drawer>
 
@@ -38,11 +32,10 @@ export default {
 
   data () {
     return {
-      profileTile: 'Perfil',
-      configTitle: 'Configurações',
-      accountTitle: 'Conta',
-      paymentTitle: 'Pagamento',
-      projectsTitle: 'Projetos',
+      profileTile: 'Iuvo',
+      askHelp: 'Pedir Ajuda',
+      feed: 'Feed',
+      map: 'Mapa Risco',
       title: 'Iuvo'
     }
   }
@@ -75,5 +68,8 @@ export default {
   color: #fff
   cursor: default
   font-family: 'Pacifico', cursive
+
+ul
+  text-align left !important
 </style>
 

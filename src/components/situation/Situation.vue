@@ -40,7 +40,9 @@
       </div>
     </form>
     
-    <vulma-button class="confirm" color='primary'>Confirmar</vulma-button> 
+    <router-link :to="{ name: 'Moment' }">
+      <vulma-button class="confirm" color='primary'>Confirmar</vulma-button> 
+    </router-link>
 
   </div>
 </template>
