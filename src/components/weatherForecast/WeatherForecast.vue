@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrapper-general">
         <div class="weather-info-wrapper">
 
             <div class="weather-centered">
@@ -11,7 +11,7 @@
                         {{ description }}
                     </div>
                     <div class="weather-information">
-                        <img src="../../assets/images/animated/day.svg" alt="Tempo Atual" class="weather-image">
+                        <img v-bind:src="'../../../static/img/animated/' + actual + '.svg'" alt="Previsao do Tempo" class="weather-image">
                         <div class="main-temperature">
                             {{ tempAtual }}°
                         </div>
@@ -25,10 +25,12 @@
                 </div>
                 
             </div>
-
         </div>
+
+        <img src="../../../static/img/robot.svg" alt="iuco Logo" class="logo">
+
         <router-link :to="{ name: 'Location' }">
-          <vulma-button class="danger" color='primary'>Preciso de Ajuda</vulma-button>
+          <vulma-button class="button is-primary is-medium danger" color='primary'>Preciso de Ajuda</vulma-button>
         </router-link>
     </div>
 </template>
@@ -82,6 +84,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.wrapper-general
+  font-family: 'Dosis', sans-serif;
+
 .weather-info-wrapper {
     text-align: center;
     height: 100%;
@@ -89,7 +94,7 @@ export default {
 }
 
 .weather-image-wrapper {
-    background-color: #1c2d3e;
+    background-color: #242833;
 
     .weather-description, .weather-risk {
         text-transform: capitalize;
@@ -107,24 +112,23 @@ export default {
     .weather-information {
         text-align: left;
         position: relative;
-        padding: 15px 0;
+        padding: 50px 0;
 
         .weather-image {
-            width: 70%;
+            width: 98px;
             max-width: 200px;
             display: inline;
+            position: absolute;
+            bottom: 79px;
+            right: 85px;
         }
 
         .main-temperature {
             color: #fff;
-            position: absolute;
-            top: 50%;
             right: 20px;
             text-align: center;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-            font-size: 60px;
+            font-size 140px
+            min-height 80px
         }
     }
 
@@ -137,7 +141,7 @@ export default {
     }
 
     .normal {
-        background-color: #00d1b2;
+        background-color: #7ed2e9;
     }
 
     .alert {
@@ -179,14 +183,26 @@ export default {
     font-style: normal;
 }
 
-.danger {
-    font-size: 20px;
-    width: 100%;
-    height: 66px;
+.danger
+  padding-left 2.75em
+  padding-right 2.75em
+  transition background-color .3s ease
+  background-color #eb6e89
+  width 70%
+  max-width 300px
+  border-radius 100px
+  position absolute
+  bottom 15px
+  left 50%
+  transform translate3d(-50%, 0, 0)
+  font-size 1.25rem
+  font-family: 'Dosis', sans-serif;
+
+.logo
+    height: 88px;
+    bottom: 60px;
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
-    background-color: #e74c3c;
-}
+    left 50%
+    transform translate3d(-50%, 0, 0)
+
 </style>

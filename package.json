@@ -1,8 +1,8 @@
 {
-  "name": "tcc",
+  "name": "iuvo",
   "version": "1.0.0",
-  "description": "PWA utilizando vue.js que tem como objetivo entregar uma aplicação para gestão de doações e meio de contribuição para instituições sociais.",
-  "author": "Milene Vieira Lacerda <milenelacerda@icloud.com>",
+  "description": "PWA utilizando vue.js que tem como objetivo permitir pedir ajuda em situações de risco, ajudar pessoas e gerar dados para previnir futuros imprevistos devido mudanças climáticas. Tudo isso atravéz de uma interface amigável que conta com a ajuda de um BOT e machine learning",
+  "author": "Milene Vieira Lacerda, Victor Serpa e Paulo Virote de Souza",
   "private": true,
   "scripts": {
     "dev": "npm install && node build/dev-server.js",

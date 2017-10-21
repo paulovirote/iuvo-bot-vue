@@ -11,9 +11,7 @@
             </div>
           </v-card-title>
           <v-card-actions>
-            <router-link :to="{ name: 'Help' }">
-              <v-btn flat color="orange">Ajudar</v-btn>
-            </router-link>
+            <v-btn flat color="orange">Ajudar</v-btn>
             <router-link :to="{ name: 'SeeMore' }">
               <v-btn flat color="orange">Ver Mais</v-btn>
             </router-link>
@@ -29,9 +27,7 @@
             </div>
           </v-card-title>
           <v-card-actions>
-            <router-link :to="{ name: 'Help' }">
-              <v-btn flat color="orange">Ajudar</v-btn>
-            </router-link>
+            <v-btn flat color="orange">Ajudar</v-btn>
             <router-link :to="{ name: 'SeeMore' }">
               <v-btn flat color="orange">Ver Mais</v-btn>
             </router-link>
@@ -47,9 +43,7 @@
             </div>
           </v-card-title>
           <v-card-actions>
-            <router-link :to="{ name: 'Help' }">
-              <v-btn flat color="orange">Ajudar</v-btn>
-            </router-link>
+            <v-btn flat color="orange">Ajudar</v-btn>
             <router-link :to="{ name: 'SeeMore' }">
               <v-btn flat color="orange">Ver Mais</v-btn>
             </router-link>

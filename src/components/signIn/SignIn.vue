@@ -25,7 +25,7 @@
       </v-text-field>
 
       <router-link :to="{ name: 'Home' }">
-        <v-btn class="btn-color" @click="submit">Entrar</v-btn>
+        <v-btn class="btn-color submitBtn" @click="submit">Entrar</v-btn>
       </router-link>
     </form>
   </div>
@@ -74,7 +74,8 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .wrapp {
-  padding: 50px 20px;
+  padding: 20px 25px;
+  font-family: 'Dosis', sans-serif;
 }
 
 .color, .input-group--text-field input {
@@ -82,10 +83,22 @@ export default {
   color: #fff !important;
 }
 
-.btn-color {
-  background: #00d1b2;
-  color: #fff !important;
-}
+.submitBtn
+  color #fff
+  padding-left: 2.75em
+  padding-right: 2.75em
+  transition: background-color .3s ease
+  background-color #6a94e6
+  border 2px solid #6a94e6
+  width: 80%;
+  max-width 300px
+  border-radius: 100px;
+  bottom 15px
+  font-size 1.25rem
+  font-family: 'Dosis', sans-serif;
+
+.submitBtn:active, .submitBtn:hover
+  background-color #6086d0
 
 .account-image 
   width: 100px
@@ -93,5 +106,5 @@ export default {
 .title
   font-size 40px !important
   color #fff
-  margin: 5px 0 50px
+  margin: 5px 0 20px
 </style>

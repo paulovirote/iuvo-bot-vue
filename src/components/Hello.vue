@@ -1,17 +1,20 @@
 <template>
   <div class="hello">
     <div class="wrapper">
-      <img src="../../static/robot.svg" alt="How Can I Help? Logo" class="logo">
+      
+      <h3 class="mini-title">Bem vindo</h3>
       <h1 class="title">{{ msg }}</h1>
 
-      <p class="about"> {{ about }} </p>
+      <img src="../../static/robot.svg" alt="How Can I Help? Logo" class="logo">
+
+      <p class="about"> Basta pedir que o <b>iuvo</b> vai te salvar!</p>
 
       <router-link :to="{ name: 'SignIn' }">
         <a class="button is-primary is-medium login">Login</a>
       </router-link>
 
       <p class="advice">Ainda não possui uma conta?
-        <router-link :to="{ name: 'SignUp' }"><a href="" class="link">Cadastre-se</a></router-link>
+        <router-link :to="{ name: 'SignUp' }" class="link">Cadastre-se</router-link>
       </p>
 
     </div>
@@ -23,14 +26,12 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'IUVO',
-      about: 'Olá, tudo bem? Com nosso app você poderá pedir ajuda em situações de risco, ajudar pessoas (caso seja do seu interesse) e gerar dados para previnir futuros imprevistos devido mudanças climáticas. Tudo isso atravéz de uma interface amigável que conta com a ajuda de um BOT e machine learning!'
+      msg: 'iuvo'
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
 header
   display: none
@@ -43,8 +44,16 @@ h1, h2
 
 .title 
   font-size: 50px !important;
-  letter-spacing: 4px !important;
-  padding-top: 20px !important;
+  padding: 0 !important;
+  font-family: 'Dosis', sans-serif;
+
+.mini-title
+  color #fff
+  height: 43px;
+  border-bottom: 2px solid #474b56;
+  width: 74%;
+  margin: 0 auto;
+  line-height 30px
 
 ul
   list-style-type: none
@@ -61,12 +70,19 @@ a
   padding-left: 2.75em
   padding-right: 2.75em
   transition: background-color .3s ease
+  background-color #6a94e6
+  width: 70%;
+  max-width 300px
+  border-radius: 100px;
+
+.login:active, .login:hover
+  background-color #6086d0
 
 .wrapper
   position: relative
   max-width: 600px
   margin: 0 auto;
-  padding-top: 50px
+  padding-top: 25px
 
 .logo
   width: 150px
@@ -74,10 +90,8 @@ a
 
 .hello
   position: relative
-  min-height: 100vh
-  background: url('../../static/img/bg-hello-page.jpg')
-  background-position: center;
-  background-size: cover
+  min-height: calc(100vh - 68px)
+  color #333
 
 .hello::before
   content: ''
@@ -86,12 +100,10 @@ a
   height: 100%
   top: 0
   left: 0
-  opacity: 0.6;
-  background-color: #101010;
 
 .about
-  padding: 40px 10px 50px
-  color: rgba(#ffffff, 0.7)
+  padding: 0px 10px 50px
+  color: #fff
 
 .advice
   color: rgba(#ffffff, 0.5)

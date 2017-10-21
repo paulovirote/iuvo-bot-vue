@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="page-wrapper">
     
-    <h2 v-if="isLoading" class="situation-title"> Registrando Ocorrência... </h2>
-    <h2 v-if="isConcluded" class="situation-title"> Ocorrência Registrada! </h2>
+    <h2 v-if="isLoading" class="situation-title"> Registrando<br>Ocorrência... </h2>
+    <h2 v-if="isConcluded" class="situation-title"> Ocorrência<br>Registrada! </h2>
 
     <div class="weather-image-wrapper">
       <div v-if="isLoading" class="loader"></div>
@@ -77,7 +77,7 @@ loader-border-secondary-color= 0.4;
     border-top: loader-border solid rgba(255, 255, 255, loader-border-secondary-color);
     border-right: loader-border solid rgba(255, 255, 255, loader-border-secondary-color);
     border-bottom: loader-border solid rgba(255, 255, 255, loader-border-secondary-color);
-    border-left: loader-border solid #00d1b2;
+    border-left: loader-border solid #eb6e89;
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
@@ -126,19 +126,6 @@ loader-border-secondary-color= 0.4;
   background-color: #1c2d3e
   padding: 18px 27px
 
-.confirm 
-  font-size: 20px
-  width 100%
-  height: 66px
-  position: absolute
-  bottom: 0
-  left: 50%
-  transform: translate3d(-50%,0,0)
-
-.confirm.disabled
-  cursor not-allowed
-  opacity 0.5
-
 @-webkit-keyframes load {
     0% {
         -webkit-transform: rotate(0deg);
@@ -158,5 +145,38 @@ loader-border-secondary-color= 0.4;
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
+}
+
+.page-wrapper
+  font-family: 'Dosis', sans-serif;
+
+.confirm
+  padding-left: 2.75em
+  padding-right: 2.75em
+  transition: background-color .3s ease
+  background-color #6a94e6
+  width: 70%;
+  max-width 300px
+  border-radius: 100px;
+  position fixed
+  bottom 15px
+  left 50%
+  transform translate3d(-50%, 0, 0)
+  font-size 1.25rem
+  font-family: 'Dosis', sans-serif;
+
+.confirm:active, .confirm:hover
+  background-color #6086d0
+
+.confirm.disabled
+  cursor not-allowed
+  opacity 0.5
+
+.page-title {
+    margin: 20px 0;
+    font-size: 28px;
+    font-weight: inherit;
+    font-style: normal;
+    color #fff
 }
 </style>

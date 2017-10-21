@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="page-wrapper">
     
-    <h2 class="location-title"> Confirmar Localização</h2>
+    <h2 class="page-title"> Confirmar Localização</h2>
 
     <div class="wrapper">
       
@@ -17,7 +17,7 @@
     
 
     <router-link :to="{ name: 'Situation' }">
-      <vulma-button class="confirm" color='primary'>Confirmar</vulma-button> 
+      <vulma-button class="button is-primary is-medium confirm" color='primary'>Confirmar</vulma-button> 
     </router-link>
 
   </div>
@@ -70,7 +70,7 @@ export default {
   margin: 50px 0;
 
 .wrapper 
-  background-color: #1c2d3e;
+  background-color: #242833;
   padding: 60px;
 
 .city 
@@ -86,19 +86,40 @@ export default {
 .form
   padding-top 50px
 
-.confirm 
-  font-size: 20px;
-  width 100%
-  height: 66px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate3d(-50%,0,0);
+.page-wrapper
+  font-family: 'Dosis', sans-serif;
+
+.confirm
+  padding-left: 2.75em
+  padding-right: 2.75em
+  transition: background-color .3s ease
+  background-color #6a94e6
+  width: 70%;
+  max-width 300px
+  border-radius: 100px;
+  position fixed
+  bottom 15px
+  left 50%
+  transform translate3d(-50%, 0, 0)
+  font-size 1.25rem
+  font-family: 'Dosis', sans-serif;
+
+.confirm:active, .confirm:hover
+  background-color #6086d0
+
+.page-title {
+    margin: 20px 0;
+    font-size: 28px;
+    font-weight: inherit;
+    font-style: normal;
+    color #fff
+}
 
 .address 
   padding-top 25px
   color #fff
   font-size 20px
+  line-height 30px
 
 .edit
   background: #fada46

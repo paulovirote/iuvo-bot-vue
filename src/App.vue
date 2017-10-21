@@ -20,12 +20,10 @@
 </script>
 
 <style lang="stylus">
-iuvo-main-blue = #2c3e50
-iuvo-dark-blue = #1c2d3e
 
 body
   margin: 0;
-  background-color: iuvo-main-blue;
+  background-color: #2d313d !important;
   height: 100vh;
 
 .wrapper{
@@ -45,8 +43,9 @@ header
   margin: 0;
   height: 56px;
   padding: 0 16px 0 24px;
-  background-color: #00d1b2;
+  background-color: #eb6e8a;
   color: #fff;
+
 header span
   display: block;
   position: relative;
