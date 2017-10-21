@@ -23,10 +23,6 @@
         </v-flex>
       </v-layout>
     </div>
-
-    <router-link :to="{ name: 'Help' }">
-      <vulma-button class="confirm" color='primary'>Ajudar</vulma-button> 
-    </router-link>
   </div>
 </template>
 <script>

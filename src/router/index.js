@@ -9,7 +9,6 @@ import Moment from '@/components/moment/Moment'
 import Map from '@/components/map/Map'
 import Done from '@/components/done/Done'
 import SeeMore from '@/components/more/SeeMore'
-import Help from '@/components/help/Help'
 import SignIn from '@/components/signIn/SignIn'
 import SignUp from '@/components/signUp/SignUp'
 import Confirmation from '@/components/confirmation/Confirmation'
@@ -70,11 +69,6 @@ export default new Router({
       path: '/seeMore',
       name: 'SeeMore',
       component: SeeMore
-    },
-    {
-      path: '/help',
-      name: 'Help',
-      component: Help
     },
     {
       path: '/signIn',

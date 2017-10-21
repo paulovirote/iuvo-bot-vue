@@ -1,0 +1,11 @@
+.menu-list a.is-active{
+  background-color:#eb6e8a;
+}
+
+.menuitem a:hover{
+  color: #eb6e8a
+}
+
+.menu-list .menuitem a.is-active:hover{
+  color: #fff
+}

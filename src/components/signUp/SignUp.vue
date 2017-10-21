@@ -49,10 +49,10 @@
       </v-checkbox>
 
       <router-link :to="{ name: 'Confirmation' }">
-        <v-btn class="btn-color" @click="submit">Enviar</v-btn>
+        <v-btn class="btn-color submitBtn" @click="submit">Enviar</v-btn>
       </router-link>
 
-      <v-btn class="btn-color clear" @click="clear">Limpar</v-btn>
+      <v-btn class="btn-color submitBtn secondaryBtn" @click="clear">Limpar</v-btn>
     </form>
   </div>
 </template>
@@ -100,16 +100,12 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .wrapp {
-  padding: 50px 20px;
+  padding: 20px 25px;
+  font-family: 'Dosis', sans-serif;
 }
 
 .color, .input-group--text-field input {
   caret-color: #fff !important;
-  color: #fff !important;
-}
-
-.btn-color {
-  background: #00d1b2;
   color: #fff !important;
 }
 
@@ -119,5 +115,25 @@ export default {
 .title
   font-size 40px !important
   color #fff
-  margin: 5px 0 50px
+  margin: 5px 0 20px
+
+.submitBtn
+  color #fff
+  padding-left: 2.75em
+  padding-right: 2.75em
+  transition: background-color .3s ease
+  background-color #6a94e6
+  border 2px solid #6a94e6
+  width: 80%;
+  max-width 300px
+  border-radius: 100px;
+  bottom 15px
+  font-size 1.25rem
+  font-family: 'Dosis', sans-serif;
+
+.secondaryBtn
+  background-color transparent
+
+.submitBtn:active, .submitBtn:hover
+  background-color #6086d0
 </style>
