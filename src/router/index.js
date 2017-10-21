@@ -6,7 +6,16 @@ import Home from '@/components/home/Home'
 import Location from '@/components/location/Location'
 import Situation from '@/components/situation/Situation'
 import Moment from '@/components/moment/Moment'
+import Map from '@/components/map/Map'
 import Done from '@/components/done/Done'
+import * as VueGoogleMaps from 'vue2-google-maps'
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyD1kL2DohyBqlaCPppnF6rdScgB4IP1U1c',
+    libraries: 'places'
+  }
+})
 
 Vue.use(Router)
 
@@ -41,6 +50,11 @@ export default new Router({
       path: '/moment',
       name: 'Moment',
       component: Moment
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: Map
     },
     {
       path: '/done',

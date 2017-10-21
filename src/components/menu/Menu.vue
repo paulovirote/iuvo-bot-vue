@@ -11,9 +11,9 @@
       <vulma-drawerheader name='Milene ' email='milenelacerda@icloud.com ' avatar='' color='custom-hulk '></vulma-drawerheader>
       <vulma-menu>
 
-        <vulma-menuitem route='/location' icon='fa-handshake-o'>{{ askHelp }}</vulma-menuitem>
-        <vulma-menuitem route='/' icon='fa-map-marker'>{{ map }}</vulma-menuitem>
-        <vulma-menuitem route='/timeline' icon='fa-rss'>{{ feed }}</vulma-menuitem>
+        <vulma-menuitem route='/location' icon='fa-handshake-o' class="align-left">{{ askHelp }}</vulma-menuitem>
+        <vulma-menuitem route='/map' icon='fa-map-marker' class="align-left">{{ map }}</vulma-menuitem>
+        <vulma-menuitem route='/timeline' icon='fa-rss' class="align-left">{{ feed }}</vulma-menuitem>
   
       </vulma-menu>
     </vulma-drawer>
@@ -71,5 +71,8 @@ export default {
 
 ul
   text-align left !important
+
+.align-left
+  text-align left 
 </style>
 
