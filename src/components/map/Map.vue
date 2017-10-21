@@ -1,25 +1,27 @@
 <template>
-  <gmap-map
-    :center="center"
-    :zoom="16"
-    :options="{styles: mapStyles}"
-    class="mapStyle"
-  >
-    <div 
-      :key="index" 
-      v-for="(marker, index) in markers">
-      <gmap-marker
-        :position="marker.position"
-        :clickable="true"
-        :draggable="false"
-        :options="{styles: markerStyles}"
-        :title="'aeho'"
-        :icon="'/static/markers/'+ marker.situacao +'.svg'"
-        @click="center=marker.position"
-      ></gmap-marker>
-    </div>
-    
-  </gmap-map>
+  <div class="wrapp">
+    <gmap-map
+        :center="center"
+        :zoom="16"
+        :options="{styles: mapStyles}"
+        class="mapStyle"
+      >
+        <div 
+          :key="index" 
+          v-for="(marker, index) in markers">
+          <gmap-marker
+            :position="marker.position"
+            :clickable="true"
+            :draggable="false"
+            :options="{styles: markerStyles}"
+            :title="'aeho'"
+            :icon="'/static/markers/'+ marker.situacao +'.svg'"
+            @click="center=marker.position"
+          ></gmap-marker>
+        </div>
+        
+      </gmap-map>
+  </div>
 
 </template>
  
@@ -37,12 +39,11 @@
 
   export default {
     name: 'map',
-    data () {
-      return {
-        center: {},
-        markers: []
-      }
-    },
+
+    data: () => ({
+      center: {},
+      markers: []
+    }),
 
     computed: {
       mapStyles () {
@@ -122,7 +123,19 @@
 </script> 
 
 <style lang="stylus" scoped>
-  .mapStyle
+.wrapp
+  position relative
+
+.mapStyle
     width 100%
     height calc(100vh - 68px)
+
+.abs 
+  position absolute
+  z-index 100
+  bottom 0
+
+.menu-content.menuable__content__active
+  top -203px !important
+  background #fff !important
 </style>
