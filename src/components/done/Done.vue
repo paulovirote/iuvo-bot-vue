@@ -11,25 +11,56 @@
       </div>
     </div>
     
-    <vulma-button v-if="isLoading" disabled class="confirm" color='primary'>Concluir</vulma-button> 
-    
     <router-link :to="{ name: 'Home' }">
-      <vulma-button v-if="isConcluded" class="confirm" color='primary'>Concluir</vulma-button> 
+      <vulma-button v-bind:class="{ disabled: !isConcluded }" class="confirm" color='primary'>Concluir</vulma-button> 
     </router-link>
 
   </div>
 </template>
 <script>
-export default {
-  name: 'done',
+  import { saveInformation } from '../../services/save/Save'
+  import VueLocalStorage from 'vue-ls'
+  import Vue from 'vue'
 
-  data () {
-    return {
-      isLoading: false,
-      isConcluded: true
+  Vue.use(VueLocalStorage)
+  
+  export default {
+    name: 'done',
+
+    data () {
+      return {
+        isLoading: true,
+        isConcluded: false
+      }
+    },
+
+    methods: {
+      saveInfo () {
+        let dados = this.getDados()
+
+        saveInformation(dados)
+          .then(data => {
+            Vue.ls.clear()
+            this.isLoading = false
+            this.isConcluded = true
+          })
+      },
+      getDados () {
+        let dados = {}
+
+        dados.lat = Vue.ls.get('lat').toString()
+        dados.lng = Vue.ls.get('lng').toString()
+        dados.momento = Vue.ls.get('momento')
+        dados.situacao = Vue.ls.get('situacao')
+
+        return dados
+      }
+    },
+
+    mounted () {
+      this.saveInfo()
     }
   }
-}
 </script>
 <style lang="stylus" scoped>
 
@@ -46,7 +77,7 @@ loader-border-secondary-color= 0.4;
     border-top: loader-border solid rgba(255, 255, 255, loader-border-secondary-color);
     border-right: loader-border solid rgba(255, 255, 255, loader-border-secondary-color);
     border-bottom: loader-border solid rgba(255, 255, 255, loader-border-secondary-color);
-    border-left: loader-border solid #ffffff;
+    border-left: loader-border solid #00d1b2;
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
@@ -103,6 +134,10 @@ loader-border-secondary-color= 0.4;
   bottom: 0
   left: 50%
   transform: translate3d(-50%,0,0)
+
+.confirm.disabled
+  cursor not-allowed
+  opacity 0.5
 
 @-webkit-keyframes load {
     0% {

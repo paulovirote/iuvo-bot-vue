@@ -80,5 +80,9 @@ ul
 
 .align-left
   text-align left 
+
+.menu{
+  display block
+}
 </style>
 
