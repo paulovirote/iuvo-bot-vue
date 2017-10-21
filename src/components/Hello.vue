@@ -1,10 +1,10 @@
 <template>
   <div class="hello">
     <div class="wrapper">
-      <img src="../../static/img/care.png" alt="How Can I Help? Logo" class="logo">
+      <img src="../../static/robot.svg" alt="How Can I Help? Logo" class="logo">
       <h1 class="title">{{ msg }}</h1>
 
-      <p class="about"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, molestiae rerum facilis amet ut reprehenderit minus? Cupiditate minima sint quia voluptas iste maxime eos dolorum quos nostrum eaque accusamus omnis, ab doloribus illum quidem reprehenderit facilis quis. Quia ab praesentium blanditiis dolor similique architecto, deleniti illum vitae pariatur excepturi odio?</p>
+      <p class="about"> {{ about }} </p>
 
       <router-link :to="{ name: 'SignIn' }">
         <a class="button is-primary is-medium login">Login</a>
@@ -23,7 +23,8 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'IUVO'
+      msg: 'IUVO',
+      about: 'Olá, tudo bem? Com nosso app você poderá pedir ajuda em situações de risco, ajudar pessoas (caso seja do seu interesse) e gerar dados para previnir futuros imprevistos devido mudanças climáticas. Tudo isso atravéz de uma interface amigável que conta com a ajuda de um BOT e machine learning!'
     }
   }
 }
@@ -41,7 +42,9 @@ h1, h2
   font-weight: normal
 
 .title 
-  letter-spacing: 8px
+  font-size: 50px !important;
+  letter-spacing: 4px !important;
+  padding-top: 20px !important;
 
 ul
   list-style-type: none
@@ -84,10 +87,10 @@ a
   top: 0
   left: 0
   opacity: 0.6;
-  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%)
+  background-color: #101010;
 
 .about
-  padding: 40px 0 50px
+  padding: 40px 10px 50px
   color: rgba(#ffffff, 0.7)
 
 .advice

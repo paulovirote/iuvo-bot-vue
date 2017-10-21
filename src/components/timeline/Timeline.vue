@@ -1,18 +1,22 @@
 <template>
-  <div class="wrapper-card"></div>
+  <div class="wrapper-card">
+    <card></card>
+
+  </div>
 </template>
 <script>
-import menuComponent from '../menu/Menu'
+import cardComponent from '../cards/Card'
 
 export default {
   name: 'timeline',
 
   components: {
-    'menu-component': menuComponent
+    'card': cardComponent
   }
+
   // data () {
   //   return {
-  //     projects: []
+  //     cardText: 'Eu preciso de telhas para minha casa'
   //   }
   // }
 }
@@ -21,5 +25,8 @@ export default {
 <style lang="stylus" scoped>
 .card 
   margin-bottom: 40px;  
+
+.wrapper-card
+  padding 10px 20px
 </style>
 
