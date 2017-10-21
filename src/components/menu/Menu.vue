@@ -14,6 +14,7 @@
 
       <vulma-menu>
         <vulma-menuitem route='/hello' icon='fa-home'>{{ iuvo }}</vulma-menuitem>
+        <vulma-menuitem route='/' icon='fa-home'>{{ weather }}</vulma-menuitem>
         <vulma-menuitem route='/location' icon='fa-handshake-o'>{{ askHelp }}</vulma-menuitem>
         <vulma-menuitem route='/map' icon='fa-map-marker'>{{ map }}</vulma-menuitem>
         <vulma-menuitem route='/timeline' icon='fa-rss'>{{ feed }}</vulma-menuitem>
@@ -36,6 +37,7 @@ export default {
     return {
       profileTile: 'Iuvo',
       iuvo: 'Iuvo',
+      weather: 'Previsão do Tempo',
       askHelp: 'Pedir Ajuda',
       feed: 'Feed',
       map: 'Mapa Risco',

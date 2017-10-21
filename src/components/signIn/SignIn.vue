@@ -17,13 +17,16 @@
       </v-text-field>
       <v-text-field
         class="color"
+        type="password"
         v-model="pass"
         label="Senha"
         data-vv-name="pass"
         required>
       </v-text-field>
 
-      <v-btn class="btn-color" @click="submit">Entrar</v-btn>
+      <router-link :to="{ name: 'Home' }">
+        <v-btn class="btn-color" @click="submit">Entrar</v-btn>
+      </router-link>
     </form>
   </div>
 </template>
@@ -33,6 +36,7 @@ export default {
 
   data: () => ({
     valid: true,
+    pass: '',
     name: '',
     nameRules: [
       v => !!v || 'Nome é obrigatório',

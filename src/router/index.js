@@ -12,6 +12,7 @@ import SeeMore from '@/components/more/SeeMore'
 import Help from '@/components/help/Help'
 import SignIn from '@/components/signIn/SignIn'
 import SignUp from '@/components/signUp/SignUp'
+import Confirmation from '@/components/confirmation/Confirmation'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
 Vue.use(VueGoogleMaps, {
@@ -84,6 +85,11 @@ export default new Router({
       path: '/signUp',
       name: 'SignUp',
       component: SignUp
+    },
+    {
+      path: '/confirmation',
+      name: 'Confirmation',
+      component: Confirmation
     }
   ]
 })

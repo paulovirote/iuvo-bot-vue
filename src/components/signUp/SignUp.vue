@@ -27,6 +27,7 @@
       <v-text-field
         class="color"
         v-model="pass"
+        type="password"
         label="Senha"
         data-vv-name="pass"
         required>
@@ -47,14 +48,17 @@
         type="checkbox">
       </v-checkbox>
 
-      <v-btn class="btn-color" @click="submit">Enviar</v-btn>
+      <router-link :to="{ name: 'Confirmation' }">
+        <v-btn class="btn-color" @click="submit">Enviar</v-btn>
+      </router-link>
+
       <v-btn class="btn-color clear" @click="clear">Limpar</v-btn>
     </form>
   </div>
 </template>
 <script>
 export default {
-  name: 'signUp',
+  name: 'Confirmation',
 
   data: () => ({
     valid: true,
