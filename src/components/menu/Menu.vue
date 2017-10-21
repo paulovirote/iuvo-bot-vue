@@ -1,16 +1,20 @@
 <template>
-  <div>    
+  <div style="text-align: left">    
     
     <vulma-navbar class="navbar" show-menu-button='true' @menu-clicked='$refs.drawer.open()'>
-      <vulma-navitem class="title" slot='right'>
+      <vulma-navitem slot='left' class="title">
         <h3 class="page-title">{{ title }}</h3>
       </vulma-navitem>
     </vulma-navbar>
 
     <vulma-drawer ref='drawer'>
-      <vulma-drawerheader name='Milene ' email='milenelacerda@icloud.com ' avatar='' color='custom-hulk '></vulma-drawerheader>
+      <router-link :to="{ name: 'Hello' }">
+        <vulma-drawerheader @menu-clicked='$refs.drawer.close()' email='' avatar='/static/robot.svg' color='custom-hulk '></vulma-drawerheader>
+      </router-link>
+
       <vulma-menu>
 
+        <vulma-menuitem route='/hello' icon='fa-home'>{{ iuvo }}</vulma-menuitem>
         <vulma-menuitem route='/location' icon='fa-handshake-o'>{{ askHelp }}</vulma-menuitem>
         <vulma-menuitem route='/' icon='fa-map-marker'>{{ map }}</vulma-menuitem>
         <vulma-menuitem route='/timeline' icon='fa-rss'>{{ feed }}</vulma-menuitem>
@@ -33,6 +37,7 @@ export default {
   data () {
     return {
       profileTile: 'Iuvo',
+      iuvo: 'Iuvo',
       askHelp: 'Pedir Ajuda',
       feed: 'Feed',
       map: 'Mapa Risco',
@@ -45,6 +50,7 @@ export default {
 <style lang="stylus" scoped>
 .bgcolor-custom-hulk 
   color: white
+  height 99px
   background-color: #00d1b2
   
 .navbar
@@ -69,7 +75,7 @@ export default {
   cursor: default
   font-family: 'Pacifico', cursive
 
-ul
-  text-align left !important
+.is-fullwidth
+  font-size 30px !important 
 </style>
 

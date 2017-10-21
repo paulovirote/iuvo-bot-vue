@@ -1,75 +1,95 @@
 <template>
   <div>
-    <div v-for="project in projects" :key="project.id" class="card">
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img :src="'./static/img/' + project.image" alt="Image">
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img src="../../../static/img/bg-hello-page.jpg" alt="Image">
-            </figure>
-          </div>
-          <div class="media-content">
-            <p class="title is-4">{{ project.title }}</p>
-            <p class="subtitle is-6">@projeto</p>
-          </div>
-        </div>
+    <v-layout>
+      <v-flex xs12 sm6 offset-sm3>
+        <v-card>
+          <v-card-media src="/static/help.jpg" height="200px"></v-card-media>
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0">{{title}}</h3>
+              <div class="description">{{ cardText }}</div>
+            </div>
+          </v-card-title>
+          <v-card-actions>
+            <router-link :to="{ name: 'Help' }">
+              <v-btn flat color="orange">Ajudar</v-btn>
+            </router-link>
+            <router-link :to="{ name: 'SeeMore' }">
+              <v-btn flat color="orange">Ver Mais</v-btn>
+            </router-link>
+          </v-card-actions>
+        </v-card>
 
-        <div class="content">
+        <v-card>
+          <v-card-media src="/static/map.png" height="200px"></v-card-media>
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0">{{title2}}</h3>
+              <div class="description">{{ cardText2 }}</div>
+            </div>
+          </v-card-title>
+          <v-card-actions>
+            <router-link :to="{ name: 'Help' }">
+              <v-btn flat color="orange">Ajudar</v-btn>
+            </router-link>
+            <router-link :to="{ name: 'SeeMore' }">
+              <v-btn flat color="orange">Ver Mais</v-btn>
+            </router-link>
+          </v-card-actions>
+        </v-card>
 
-          {{ project.description }}
-
-          <a>@projeto</a>.
-          <a>#categoria</a>
-          <a>#categoria</a>
-          <br>
-          <small>09:09 AM - 25 Agosto 2017</small>
-        </div>
-      </div>
-    </div>
+        <v-card>
+          <v-card-media src="/static/deslizamento.jpeg" height="200px"></v-card-media>
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-0">{{title3}}</h3>
+              <div class="description">{{ cardText3 }}</div>
+            </div>
+          </v-card-title>
+          <v-card-actions>
+            <router-link :to="{ name: 'Help' }">
+              <v-btn flat color="orange">Ajudar</v-btn>
+            </router-link>
+            <router-link :to="{ name: 'SeeMore' }">
+              <v-btn flat color="orange">Ver Mais</v-btn>
+            </router-link>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 <script>
-import { bulmaComponentGenerator } from 'vue-bulma-components'
-import { listProjects } from '../../services/projects/ProjectService'
-
 export default {
+  name: 'cardComponent',
 
-  data() {
+  data () {
     return {
-      projects: []
+      title: 'Solicitação de recursos',
+      cardText: '- 10 telhas',
+      title2: 'Resgate',
+      cardText2: 'Enchente',
+      title3: 'Deslizamento',
+      cardText3: 'Materiais de construção e de limpeza'
     }
-  },
-
-  components: {
-    box: bulmaComponentGenerator('box'),
   },
 
   methods: {
-    fetchProjects() {
-      listProjects()
-        .then(data => {
-          this.projects = data
-        })
-    }
   },
 
-  mounted() {
-    this.fetchProjects()
-  },
-
-  computed: {
-    list() {
-      return this.projects
-    }
+  mounted () {
   }
-
 }
 </script>
-<style>
+<style lang="stylus" scoped>
+.mb-0
+  text-align: left
+
+.card 
+  margin-bottom 20px
+  margin-top 20px
+
+.description
+  text-align left 
 </style>
 

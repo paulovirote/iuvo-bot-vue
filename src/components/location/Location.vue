@@ -11,10 +11,7 @@
         </div>
       </div>
 
-      <h3 class="address">Dona Augusta, Centro, Charqueadas - RS</h3>
-
-      
-      <vulma-button class="edit" color='primary'>Editar</vulma-button>
+      <h3 class="address">{{ address }}</h3>
 
     </div>
     
@@ -26,8 +23,31 @@
   </div>
 </template>
 <script>
+import { getLocation } from '../../services/location/LocationService'
+import { getCityName } from '../../services/location/CityService'
+
 export default {
-  name: 'location'
+  name: 'location',
+
+  data () {
+    return {
+      address: '-'
+    }
+  },
+
+  methods: {
+    location () {
+      getLocation()
+        .then(getCityName)
+        .then(data => {
+          this.address = data.endereco
+        })
+    }
+  },
+
+  mounted () {
+    this.location()
+  }
 }
 </script>
 <style lang="stylus" scoped>
@@ -37,7 +57,7 @@ export default {
 .location-title
   font-size 28px
   color #fff
-  margin: 20px 0;
+  margin: 50px 0;
 
 .wrapper 
   background-color: #1c2d3e;
