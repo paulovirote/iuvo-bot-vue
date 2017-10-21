@@ -70,7 +70,7 @@ export default {
         })
     },
     saveInformation (position) {
-      Vue.ls.set('position', position, 3600)
+      Vue.ls.set('position', position)
       return position
     }
   },
