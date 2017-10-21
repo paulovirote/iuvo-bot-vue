@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <h3 class="address">Dona Augusta, Centro, Charqueadas - RS</h3>
+      <h3 class="address">-</h3>
 
       
       <vulma-button class="edit" color='primary'>Editar</vulma-button>
