@@ -6,6 +6,15 @@ import Home from '@/components/home/Home'
 import Location from '@/components/location/Location'
 import Situation from '@/components/situation/Situation'
 import Moment from '@/components/moment/Moment'
+import Map from '@/components/map/Map'
+import * as VueGoogleMaps from 'vue2-google-maps'
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyD1kL2DohyBqlaCPppnF6rdScgB4IP1U1c',
+    libraries: 'places'
+  }
+})
 
 Vue.use(Router)
 
@@ -27,19 +36,24 @@ export default new Router({
       component: Timeline
     },
     {
-      path: '/location',
+      path: '/localizacao',
       name: 'Location',
       component: Location
     },
     {
-      path: '/situation',
+      path: '/situacao',
       name: 'Situation',
       component: Situation
     },
     {
-      path: '/moment',
+      path: '/momento',
       name: 'Moment',
       component: Moment
+    },
+    {
+      path: '/mapa',
+      name: 'map',
+      component: Map
     }
   ]
 })
