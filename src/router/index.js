@@ -8,6 +8,10 @@ import Situation from '@/components/situation/Situation'
 import Moment from '@/components/moment/Moment'
 import Map from '@/components/map/Map'
 import Done from '@/components/done/Done'
+import SeeMore from '@/components/more/SeeMore'
+import Help from '@/components/help/Help'
+import SignIn from '@/components/signIn/SignIn'
+import SignUp from '@/components/signUp/SignUp'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
 Vue.use(VueGoogleMaps, {
@@ -60,6 +64,26 @@ export default new Router({
       path: '/done',
       name: 'Done',
       component: Done
+    },
+    {
+      path: '/seeMore',
+      name: 'SeeMore',
+      component: SeeMore
+    },
+    {
+      path: '/help',
+      name: 'Help',
+      component: Help
+    },
+    {
+      path: '/signIn',
+      name: 'SignIn',
+      component: SignIn
+    },
+    {
+      path: '/signUp',
+      name: 'SignUp',
+      component: SignUp
     }
   ]
 })
