@@ -8,36 +8,54 @@
     <form action="">
       <div class="wrapper">
         <div class="wrapp-input">
-          <input type="checkbox" class="option" name="pre"> 
+          <input type="radio" class="option" name="momentGroup" value="pre" v-model="checkedMoment"> 
         </div>
         <label class="label" for="pre">Irá Acontecer</label>
       </div>
       
       <div class="wrapper">
         <div class="wrapp-input">
-          <input type="checkbox" class="option" name="durante">
+          <input type="radio" class="option" name="momentGroup" value="durante" v-model="checkedMoment">
         </div>
         <label class="label" for="enchente">Está Acontendo</label>
       </div>
 
       <div class="wrapper">
         <div class="wrapp-input">
-          <input type="checkbox" class="option" name="pos">
+          <input type="radio" class="option" name="momentGroup" value="pos" v-model="checkedMoment">
         </div>
         <label class="label" for="pos">Aconteceu</label>
       </div>
     </form>
     
     <router-link :to="{ name: 'Done' }">
-      <vulma-button class="confirm" color='primary'>Confirmar</vulma-button> 
+      <vulma-button class="confirm" color='primary' v-on:click="saveInformation">Confirmar</vulma-button> 
     </router-link>
 
   </div>
 </template>
 <script>
-export default {
-  name: 'moment'
-}
+  import VueLocalStorage from 'vue-ls'
+  import Vue from 'vue'
+
+  Vue.use(VueLocalStorage)
+
+  export default {
+    name: 'moment',
+
+    data () {
+      return {
+        checkedMoment: ''
+      }
+    },
+
+    methods: {
+      saveInformation () {
+        let checked = this.checkedMoment
+        Vue.ls.set('momento', checked)
+      }
+    }
+  }
 </script>
 <style lang="stylus" scoped>
 .weather-image-wrapper

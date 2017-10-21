@@ -25,6 +25,10 @@
 <script>
 import { getLocation } from '../../services/location/LocationService'
 import { getCityName } from '../../services/location/CityService'
+import VueLocalStorage from 'vue-ls'
+import Vue from 'vue'
+
+Vue.use(VueLocalStorage)
 
 export default {
   name: 'location',
@@ -38,10 +42,16 @@ export default {
   methods: {
     location () {
       getLocation()
+        .then(this.saveInformation)
         .then(getCityName)
         .then(data => {
           this.address = data.endereco
         })
+    },
+    saveInformation (position) {
+      Vue.ls.set('lat', position.lat)
+      Vue.ls.set('lng', position.lng)
+      return position
     }
   },
 

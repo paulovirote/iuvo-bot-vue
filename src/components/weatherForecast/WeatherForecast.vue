@@ -36,6 +36,10 @@
 <script>
 import { getLocation } from '../../services/location/LocationService'
 import { getWeatherInfos } from '../../services/weather/WeatherService'
+import VueLocalStorage from 'vue-ls'
+import Vue from 'vue'
+
+Vue.use(VueLocalStorage)
 
 export default {
   name: 'weatherForecastComponent',
@@ -54,6 +58,7 @@ export default {
   methods: {
     location () {
       getLocation()
+        .then(this.saveInformation)
         .then(getWeatherInfos)
         .then(data => {
           this.tempAtual = data.temperatura.atual
@@ -63,6 +68,10 @@ export default {
           this.actual = data.previsao.atual
           this.critic = data.previsao.critica
         })
+    },
+    saveInformation (position) {
+      Vue.ls.set('position', position)
+      return position
     }
   },
 
