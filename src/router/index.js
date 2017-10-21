@@ -37,22 +37,22 @@ export default new Router({
       component: Timeline
     },
     {
-      path: '/localizacao',
+      path: '/location',
       name: 'Location',
       component: Location
     },
     {
-      path: '/situacao',
+      path: '/situation',
       name: 'Situation',
       component: Situation
     },
     {
-      path: '/momento',
+      path: '/moment',
       name: 'Moment',
       component: Moment
     },
     {
-      path: '/mapa',
+      path: '/map',
       name: 'map',
       component: Map
     },

@@ -1,28 +1,24 @@
 <template>
   <gmap-map
     :center="center"
-    :zoom="10"
+    :zoom="16"
     :options="{styles: mapStyles}"
     class="mapStyle"
   >
     <div 
       :key="index" 
-      v-for="(m, index) in markers">
+      v-for="(marker, index) in markers">
       <gmap-marker
-        :position="m.position"
+        :position="marker.position"
         :clickable="true"
         :draggable="false"
         :options="{styles: markerStyles}"
-        :icon="'/static/markers/Thunderstorm.svg'"
-        @click="center=m.position"
+        :title="'aeho'"
+        :icon="'/static/markers/'+ marker.situacao +'.svg'"
+        @click="center=marker.position"
       ></gmap-marker>
-      <gmap-info-window 
-        :opened="true" 
-        :options="{ content:'teste' }">
-      </gmap-info-window>
     </div>
     
-
   </gmap-map>
 
 </template>
@@ -31,6 +27,7 @@
   import * as VueGoogleMaps from 'vue2-google-maps'
   import Vue from 'vue'
   import { getOcorrencias } from '../../services/map/MapService'
+  import { getLocation } from '../../services/location/LocationService'
 
   Vue.use(VueGoogleMaps, {
     load: {
@@ -42,7 +39,7 @@
     name: 'map',
     data () {
       return {
-        center: {lat: -29.966509, lng: -51.609544},
+        center: {},
         markers: []
       }
     },
@@ -92,12 +89,11 @@
           .then(data => {
             let locations = []
             locations = data.map((ocorrencia) => {
-              let image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-              ocorrencia.marker = image
               ocorrencia.position = this.convertPositions(ocorrencia.position)
-              console.log(ocorrencia)
               return ocorrencia
             })
+
+            console.log(locations)
             this.markers = locations
           })
       },
@@ -106,10 +102,19 @@
         position.lat = parseFloat(position.lat)
         position.lng = parseFloat(position.lng)
         return position
+      },
+
+      location () {
+        getLocation()
+          .then(data => {
+            this.center = data
+            this.markers.push({ position: this.center, situacao: 'User' })
+          })
       }
     },
 
     mounted () {
+      this.location()
       this.ocorrencias()
     }
 
