@@ -1,6 +1,7 @@
-# XXX - Client
+# Iuvo
 
-> Projeto criado na modalidade Hackathon do evento do Instituto Federal Sul-rio-grandense - Campus Charqueadas.
+Projeto criado na modalidade Hackathon do evento do Instituto Federal Sul-rio-grandense - Campus Charqueadas.
+O projeto é a interface de um BOT chamado Iuvo. Ele serve para solitar ajuda com o intuito de diminuir vítimas de intempéries climáticas.
 
 ## Build Setup
 
@@ -17,5 +18,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
